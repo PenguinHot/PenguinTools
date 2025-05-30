@@ -40,7 +40,15 @@ public static partial class FFmpeg
 
         if (needOffset)
         {
-            options.Add($"-itsoffset {meta.BgmRealOffset}");
+            var offsetSeconds = Math.Round(meta.BgmRealOffset, 6);
+            if (meta.BgmRealOffset > 0)
+            {
+                filterChain.Add($"adelay=delays={offsetSeconds}S:all=1");
+            }
+            else if (meta.BgmRealOffset < 0)
+            {
+                filterChain.Add($"atrim=start={-offsetSeconds}");
+            }
         }
 
         if (needVoluming)
@@ -53,7 +61,7 @@ public static partial class FFmpeg
             filterChain.Add($"alimiter=limit={meta.TargetMaxTruePeak}dB:attack={meta.TargetLookAheadMs}:release={meta.TargetReleaseMs}:level=0");
         }
 
-        filterChain.Add($"aformat=sample_fmts=s16:channel_layouts=stereo:sample_rates={meta.TargetSampleRate} ");
+        filterChain.Add($"aformat=sample_fmts=s16:channel_layouts=stereo:sample_rates={meta.TargetSampleRate}");
 
         var filterString = string.Join(",", filterChain);
         var optionString = string.Join(" ", options);
@@ -134,7 +142,7 @@ public static partial class FFmpeg
                 Arguments = $"-hide_banner -i \"{inPath}\" -map 0:a -vn -af ebur128@ebur128=peak=true:framelog=quiet -map_metadata -1 -f null -",
                 RedirectStandardError = true,
                 UseShellExecute = false,
-                CreateNoWindow = true
+                CreateNoWindow = true,
             };
 
             ffmpeg.Start();
@@ -187,7 +195,6 @@ public static partial class FFmpeg
         var peakValue = double.Parse(peak.Groups[1].Value, System.Globalization.CultureInfo.InvariantCulture);
 
         var stream = probe.Streams[0];
-
         return new AudioInformation
         {
             Codec = stream.CodecName,

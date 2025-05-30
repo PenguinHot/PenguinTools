@@ -258,7 +258,7 @@ public partial class MgxcParser
 
         if (note == null)
         {
-            var msg = string.Format(Strings.Error_Unrecognized_note_type, br.BaseStream.Position);
+            var msg = string.Format(Strings.Error_Unrecognized_note_type, (int)type, br.BaseStream.Position);
             diag.Report(Severity.Warning, msg, tick, type);
             return;
         }
