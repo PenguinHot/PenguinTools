@@ -1,11 +1,11 @@
 ﻿using PenguinTools.Attributes;
-using PenguinTools.Common.Asset;
-using PenguinTools.Common.Metadata;
-using PenguinTools.Common.Resources;
+using PenguinTools.Common;
+using PenguinTools.Core.Asset;
+using PenguinTools.Core.Metadata;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
-using mgxc = PenguinTools.Common.Chart.Models.mgxc;
+using mgxc = PenguinTools.Core.Chart.Models.mgxc;
 
 namespace PenguinTools.Models;
 

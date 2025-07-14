@@ -1,8 +1,8 @@
-﻿using PenguinTools.Common.Resources;
+﻿using PenguinTools.Common;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace PenguinTools.Common.Asset;
+namespace PenguinTools.Core.Asset;
 
 public class AssetManager : INotifyPropertyChanged
 {
@@ -15,7 +15,7 @@ public class AssetManager : INotifyPropertyChanged
     }
 
     public AssetDictionary MergeAssets { get; private set; } = [];
-    private AssetDictionary HardAssets { get; } = new(ResourceManager.GetStream("assets.json"));
+    private AssetDictionary HardAssets { get; } = new(ResourceUtils.GetStream("assets.json"));
     private AssetDictionary UserAssets { get; } = [];
 
     public IReadOnlySet<Entry> this[AssetType type] => MergeAssets[type];

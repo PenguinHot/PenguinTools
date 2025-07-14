@@ -1,4 +1,4 @@
-﻿namespace PenguinTools.Common;
+﻿namespace PenguinTools.Core;
 
 public interface IConverter<in T>
 {

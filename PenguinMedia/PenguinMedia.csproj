@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0</TargetFramework>
+        <PublishAot>true</PublishAot>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BCnEncoder.Net.ImageSharp" Version="1.1.2" />
+        <PackageReference Include="FFmpeg.AutoGen" Version="7.1.1" />
+        <PackageReference Include="SixLabors.ImageSharp" Version="3.1.10"/>
+        <PackageReference Include="System.CommandLine" Version="2.0.0-beta5.25306.1"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\External\SonicAudioTools\Source\SonicAudioLib\SonicAudioLib.csproj"/>
+        <ProjectReference Include="..\External\VGAudio\src\VGAudio\VGAudio.csproj"/>
+        <ProjectReference Include="..\PenguinTools.Common\PenguinTools.Common.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Resources\dummy.acb">
+            <LogicalName>dummy.acb</LogicalName>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Resources\fx_dummy.dds">
+            <LogicalName>fx_dummy.dds</LogicalName>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Resources\nf_dummy.afb">
+            <LogicalName>nf_dummy.afb</LogicalName>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Resources\st_dummy.afb">
+            <LogicalName>st_dummy.afb</LogicalName>
+        </EmbeddedResource>
+    </ItemGroup>
+
+    <Import Project="..\Version.props"/>
+
+</Project>

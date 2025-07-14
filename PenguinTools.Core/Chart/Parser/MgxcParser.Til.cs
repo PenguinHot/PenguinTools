@@ -1,8 +1,8 @@
-﻿using PenguinTools.Common.Chart.Models;
-using PenguinTools.Common.Resources;
-using mgxc = PenguinTools.Common.Chart.Models.mgxc;
+﻿using PenguinTools.Common;
+using PenguinTools.Core.Chart.Models;
+using mgxc = PenguinTools.Core.Chart.Models.mgxc;
 
-namespace PenguinTools.Common.Chart.Parser;
+namespace PenguinTools.Core.Chart.Parser;
 
 public partial class MgxcParser
 {
@@ -57,7 +57,7 @@ public partial class MgxcParser
                 note.Timeline = id;
 
                 // magic optimization: when the crash is transparent, it is not necessary to add the SLA on the control joint
-                if (note is mgxc.AirCrashJoint { Parent: mgxc.AirCrash { Color: Color.NON }, Density.Original: 0x7FFFFFFF or 0 }) continue;
+                if (note is mgxc.AirCrashJoint { Parent: mgxc.AirCrash { Color: Color.Non }, Density.Original: 0x7FFFFFFF or 0 }) continue;
 
                 // find the speed that is just before the note
                 var prevTil = events.Where(p => p.Tick.Original <= note.Tick.Original).OrderByDescending(p => p.Tick).FirstOrDefault();

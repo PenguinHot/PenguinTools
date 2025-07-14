@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace PenguinTools.Common.Asset;
+namespace PenguinTools.Core.Asset;
 
 public class AssetDictionary : Dictionary<AssetType, SortedSet<Entry>>
 {

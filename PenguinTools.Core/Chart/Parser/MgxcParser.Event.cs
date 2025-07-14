@@ -1,6 +1,6 @@
-﻿using PenguinTools.Common.Resources;
+﻿using PenguinTools.Common;
 
-namespace PenguinTools.Common.Chart.Parser;
+namespace PenguinTools.Core.Chart.Parser;
 
 using mgxc = Models.mgxc;
 

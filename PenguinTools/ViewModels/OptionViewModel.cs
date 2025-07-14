@@ -1,14 +1,13 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using Microsoft.Win32;
 using PenguinTools.Common;
-using PenguinTools.Common.Asset;
-using PenguinTools.Common.Audio;
-using PenguinTools.Common.Chart;
-using PenguinTools.Common.Chart.Parser;
-using PenguinTools.Common.Graphic;
-using PenguinTools.Common.Metadata;
-using PenguinTools.Common.Resources;
-using PenguinTools.Common.Xml;
+using PenguinTools.Core;
+using PenguinTools.Core.Asset;
+using PenguinTools.Core.Chart;
+using PenguinTools.Core.Chart.Parser;
+using PenguinTools.Core.Media;
+using PenguinTools.Core.Metadata;
+using PenguinTools.Core.Xml;
 using PenguinTools.Models;
 using System.Collections.Concurrent;
 using System.IO;
@@ -292,7 +291,7 @@ public partial class OptionViewModel : WatchViewModel<OptionModel>
         return base.Reload();
     }
 
-    private sealed class ProcessContext
+    private class ProcessContext
     {
         public required IDiagnostic Diagnostic { get; init; }
         public required IProgress<string> Progress { get; init; }

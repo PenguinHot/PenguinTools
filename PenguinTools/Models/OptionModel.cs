@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using PenguinTools.Attributes;
-using PenguinTools.Common.Resources;
+using PenguinTools.Common;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
@@ -26,7 +26,7 @@ public partial class OptionModel : Model
     [LocalizableDisplayName(nameof(Strings.Display_ConvertChart), typeof(Strings))]
     [NotifyPropertyChangedFor(nameof(CanExecute))]
     public partial bool ConvertChart { get; set; } = true;
-    
+
     [ObservableProperty]
     [PropertyOrder(2)]
     [NotifyPropertyChangedFor(nameof(CanExecute))]

@@ -5,7 +5,7 @@
 
 using System.Text.Json.Serialization;
 
-namespace PenguinTools.Common.Chart.Models.c2s;
+namespace PenguinTools.Core.Chart.Models.c2s;
 
 public abstract class Event : Node;
 

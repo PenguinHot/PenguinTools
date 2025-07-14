@@ -1,11 +1,10 @@
-﻿using PenguinTools.Common.Asset;
-using PenguinTools.Common.Resources;
-using PenguinTools.Common.Xml;
+﻿using PenguinTools.Common;
+using PenguinTools.Core.Asset;
+using PenguinTools.Core.Xml;
 
+namespace PenguinTools.Core.Media;
 
-namespace PenguinTools.Common.Graphic;
-
-public sealed class StageConverter(AssetManager asm) : IConverter<StageConverter.Context>
+public class StageConverter(AssetManager asm) : IConverter<StageConverter.Context>
 {
     public async Task ConvertAsync(Context context, IDiagnostic diag, IProgress<string>? progress = null, CancellationToken ct = default)
     {
@@ -21,7 +20,7 @@ public sealed class StageConverter(AssetManager asm) : IConverter<StageConverter
 
         var xml = new StageXml(stageId, context.NoteFieldLane);
         context.Result = xml.Name;
-        var outputDir = await xml.SaveDirectoryAsync(context.OutputFolder);
+        var outputDir = await xml.SaveDirectoryAsync(context.DestinationFolder);
 
         var nfPath = Path.Combine(outputDir, xml.NotesFieldFile);
         var stPath = Path.Combine(outputDir, xml.BaseFile);
@@ -50,7 +49,7 @@ public sealed class StageConverter(AssetManager asm) : IConverter<StageConverter
         return Task.FromResult(!diag.HasError);
     }
 
-    public record Context(string BgPath, string?[]? FxPaths, int? StageId, string OutputFolder, Entry NoteFieldLane)
+    public record Context(string BgPath, string?[]? FxPaths, int? StageId, string DestinationFolder, Entry NoteFieldLane)
     {
         public Entry Result { get; set; } = Entry.Default;
     }

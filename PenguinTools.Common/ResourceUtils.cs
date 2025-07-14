@@ -1,39 +1,38 @@
-﻿using PenguinTools.Common.Graphic;
-using PenguinTools.Common.Resources;
-using System.Reflection;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿using System.Reflection;
 
 namespace PenguinTools.Common;
 
-public static class ResourceManager
+public static class ResourceUtils
 {
-    private static readonly string Name = Assembly.GetExecutingAssembly().GetName().Name ?? nameof(ResourceManager);
+    private const string Name = "PenguinTools.Temp";
     private static readonly Lock Lock = new();
+    private static bool _isInitialized;
     public static string TempWorkPath => Path.Combine(Path.GetTempPath(), Name);
 
     public static void Initialize()
     {
         lock (Lock)
         {
+            if (_isInitialized) return;
             Directory.CreateDirectory(TempWorkPath);
             var path = Environment.GetEnvironmentVariable("PATH") ?? string.Empty;
             if (!path.Contains(TempWorkPath, StringComparison.OrdinalIgnoreCase))
             {
                 Environment.SetEnvironmentVariable("PATH", $"{TempWorkPath};{path}");
             }
+            _isInitialized = true;
         }
-        Register("mua_lib.dll", MuaInterop.LibraryStream);
     }
 
     public static string GetTempPath(string fileName)
     {
+        Initialize();
         if (string.IsNullOrWhiteSpace(fileName)) throw new ArgumentNullException(nameof(fileName));
         var tempPath = Path.Combine(TempWorkPath, fileName);
         return tempPath;
     }
 
-    #region Management
+    #region Storage
 
     public static void Release()
     {
@@ -61,8 +60,10 @@ public static class ResourceManager
         }
     }
 
-    private static void Register(string fileName, Stream resource)
+    public static void Save(string fileName, Stream resource)
     {
+        Initialize();
+
         if (string.IsNullOrWhiteSpace(fileName)) throw new ArgumentNullException(nameof(fileName));
         if (resource == null || resource.Length == 0) throw new ArgumentNullException(nameof(resource));
 
@@ -78,13 +79,13 @@ public static class ResourceManager
 
     #region Resources
 
-    internal static Stream GetStream(string resourceName)
+    public static Stream GetStream(string resourceName)
     {
         var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resourceName) ?? throw new FileNotFoundException($"Resource '{resourceName}' not found in assembly '{Name}'.");
         return stream;
     }
 
-    internal static byte[] GetByte(string resourceName)
+    public static byte[] GetByte(string resourceName)
     {
         var stream = GetStream(resourceName);
         using var ms = new MemoryStream();

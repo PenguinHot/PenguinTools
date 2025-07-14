@@ -1,8 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using Microsoft.Win32;
 using PenguinTools.Common;
-using PenguinTools.Common.Graphic;
-using PenguinTools.Common.Resources;
+using PenguinTools.Core;
+using PenguinTools.Core.Media;
 using System.Diagnostics;
 using System.IO;
 using System.Media;
@@ -14,7 +14,7 @@ public partial class MiscViewModel : ViewModel
     [RelayCommand]
     private static void OpenTempDirectory()
     {
-        var path = ResourceManager.TempWorkPath;
+        var path = ResourceUtils.TempWorkPath;
 
         Process.Start(new ProcessStartInfo
         {

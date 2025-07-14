@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SonicAudioLib", "External\S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VGAudio", "External\VGAudio\src\VGAudio\VGAudio.csproj", "{9DE3CB60-D4E9-4B23-A655-AE9AE56C8FE7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PenguinMedia", "PenguinMedia\PenguinMedia.csproj", "{D4A93A94-3FE8-4379-8392-CD36F30B4427}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PenguinTools.Common", "PenguinTools.Common\PenguinTools.Common.csproj", "{DE3C3B8A-D54D-4AF5-8C92-D0BA8592D17C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +85,30 @@ Global
 		{9DE3CB60-D4E9-4B23-A655-AE9AE56C8FE7}.Release|x64.Build.0 = Release|Any CPU
 		{9DE3CB60-D4E9-4B23-A655-AE9AE56C8FE7}.Release|x86.ActiveCfg = Release|Any CPU
 		{9DE3CB60-D4E9-4B23-A655-AE9AE56C8FE7}.Release|x86.Build.0 = Release|Any CPU
+		{D4A93A94-3FE8-4379-8392-CD36F30B4427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4A93A94-3FE8-4379-8392-CD36F30B4427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4A93A94-3FE8-4379-8392-CD36F30B4427}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D4A93A94-3FE8-4379-8392-CD36F30B4427}.Debug|x64.Build.0 = Debug|Any CPU
+		{D4A93A94-3FE8-4379-8392-CD36F30B4427}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D4A93A94-3FE8-4379-8392-CD36F30B4427}.Debug|x86.Build.0 = Debug|Any CPU
+		{D4A93A94-3FE8-4379-8392-CD36F30B4427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4A93A94-3FE8-4379-8392-CD36F30B4427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4A93A94-3FE8-4379-8392-CD36F30B4427}.Release|x64.ActiveCfg = Release|Any CPU
+		{D4A93A94-3FE8-4379-8392-CD36F30B4427}.Release|x64.Build.0 = Release|Any CPU
+		{D4A93A94-3FE8-4379-8392-CD36F30B4427}.Release|x86.ActiveCfg = Release|Any CPU
+		{D4A93A94-3FE8-4379-8392-CD36F30B4427}.Release|x86.Build.0 = Release|Any CPU
+		{DE3C3B8A-D54D-4AF5-8C92-D0BA8592D17C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE3C3B8A-D54D-4AF5-8C92-D0BA8592D17C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE3C3B8A-D54D-4AF5-8C92-D0BA8592D17C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DE3C3B8A-D54D-4AF5-8C92-D0BA8592D17C}.Debug|x64.Build.0 = Debug|Any CPU
+		{DE3C3B8A-D54D-4AF5-8C92-D0BA8592D17C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DE3C3B8A-D54D-4AF5-8C92-D0BA8592D17C}.Debug|x86.Build.0 = Debug|Any CPU
+		{DE3C3B8A-D54D-4AF5-8C92-D0BA8592D17C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE3C3B8A-D54D-4AF5-8C92-D0BA8592D17C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE3C3B8A-D54D-4AF5-8C92-D0BA8592D17C}.Release|x64.ActiveCfg = Release|Any CPU
+		{DE3C3B8A-D54D-4AF5-8C92-D0BA8592D17C}.Release|x64.Build.0 = Release|Any CPU
+		{DE3C3B8A-D54D-4AF5-8C92-D0BA8592D17C}.Release|x86.ActiveCfg = Release|Any CPU
+		{DE3C3B8A-D54D-4AF5-8C92-D0BA8592D17C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

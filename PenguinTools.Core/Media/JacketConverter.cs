@@ -1,7 +1,6 @@
-﻿using PenguinTools.Common.Resources;
+﻿using PenguinTools.Common;
 
-
-namespace PenguinTools.Common.Graphic;
+namespace PenguinTools.Core.Media;
 
 public class JacketConverter : IConverter<JacketConverter.Context>
 {

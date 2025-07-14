@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using PenguinTools.Common.Resources;
+using PenguinTools.Common;
 using PenguinTools.Services;
 using System.Diagnostics;
 

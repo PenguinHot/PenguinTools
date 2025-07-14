@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace PenguinTools.Common.Asset;
+namespace PenguinTools.Core.Asset;
 
 public enum AssetType
 {

@@ -1,9 +1,9 @@
-﻿using PenguinTools.Common.Chart.Models;
-using PenguinTools.Common.Resources;
+﻿using PenguinTools.Common;
+using PenguinTools.Core.Chart.Models;
 
 // ReSharper disable RedundantNameQualifier
 
-namespace PenguinTools.Common.Chart;
+namespace PenguinTools.Core.Chart;
 
 using mgxc = Models.mgxc;
 using c2s = Models.c2s;

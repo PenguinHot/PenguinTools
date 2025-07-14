@@ -1,12 +1,12 @@
-﻿using PenguinTools.Common.Asset;
-using PenguinTools.Common.Chart.Models;
-using PenguinTools.Common.Metadata;
-using PenguinTools.Common.Resources;
+﻿using PenguinTools.Common;
+using PenguinTools.Core.Asset;
+using PenguinTools.Core.Chart.Models;
+using PenguinTools.Core.Media;
 using System.Text;
 using System.Text.RegularExpressions;
-using mgxc = PenguinTools.Common.Chart.Models.mgxc;
+using mgxc = PenguinTools.Core.Chart.Models.mgxc;
 
-namespace PenguinTools.Common.Chart.Parser;
+namespace PenguinTools.Core.Chart.Parser;
 
 using mgxc = mgxc;
 

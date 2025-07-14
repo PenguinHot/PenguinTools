@@ -1,6 +1,6 @@
-﻿using PenguinTools.Common.Resources;
+﻿using PenguinTools.Common;
 
-namespace PenguinTools.Common.Graphic;
+namespace PenguinTools.Core.Media;
 
 public class AfbExtractor : IConverter<AfbExtractor.Options>
 {
@@ -8,7 +8,7 @@ public class AfbExtractor : IConverter<AfbExtractor.Options>
     {
         if (!await CanConvertAsync(options, diag)) return;
         progress?.Report(Strings.Status_extracting);
-        MuaInterop.ExtractAfb(options.InputPath, options.OutputFolder);
+        MuaInterop.ExtractAfb(options.InputPath, options.DestinationFolder);
         ct.ThrowIfCancellationRequested();
         progress?.Report(Strings.Status_writing);
     }
@@ -19,5 +19,5 @@ public class AfbExtractor : IConverter<AfbExtractor.Options>
         return Task.FromResult(!diag.HasError);
     }
 
-    public record Options(string InputPath, string OutputFolder);
+    public record Options(string InputPath, string DestinationFolder);
 }

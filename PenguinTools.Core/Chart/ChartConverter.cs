@@ -1,10 +1,10 @@
-﻿using PenguinTools.Common.Chart.Models;
-using PenguinTools.Common.Resources;
+﻿using PenguinTools.Common;
+using PenguinTools.Core.Chart.Models;
 using System.Text;
 
 // ReSharper disable RedundantNameQualifier
 
-namespace PenguinTools.Common.Chart;
+namespace PenguinTools.Core.Chart;
 
 using mgxc = Models.mgxc;
 using c2s = Models.c2s;
@@ -85,7 +85,7 @@ public partial class ChartConverter : IConverter<ChartConverter.Context>
         }
 
         if (this.diag.HasError) return;
-        await File.WriteAllTextAsync(context.OutputPath, sb.ToString(), ct);
+        await File.WriteAllTextAsync(context.Destination, sb.ToString(), ct);
     }
 
     public Task<bool> CanConvertAsync(Context context, IDiagnostic diag)
@@ -127,5 +127,5 @@ public partial class ChartConverter : IConverter<ChartConverter.Context>
         }
     }
 
-    public record Context(string OutputPath, mgxc.Chart Chart);
+    public record Context(string Destination, mgxc.Chart Chart);
 }

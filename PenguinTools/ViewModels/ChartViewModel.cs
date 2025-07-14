@@ -1,8 +1,8 @@
 ﻿using Microsoft.Win32;
 using PenguinTools.Common;
-using PenguinTools.Common.Chart;
-using PenguinTools.Common.Chart.Parser;
-using PenguinTools.Common.Resources;
+using PenguinTools.Core;
+using PenguinTools.Core.Chart;
+using PenguinTools.Core.Chart.Parser;
 using PenguinTools.Models;
 using System.IO;
 

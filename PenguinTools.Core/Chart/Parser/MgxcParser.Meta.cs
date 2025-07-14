@@ -1,8 +1,9 @@
-﻿using PenguinTools.Common.Asset;
-using PenguinTools.Common.Metadata;
-using PenguinTools.Common.Resources;
+﻿using PenguinTools.Common;
+using PenguinTools.Core.Asset;
+using PenguinTools.Core.Media;
+using PenguinTools.Core.Metadata;
 
-namespace PenguinTools.Common.Chart.Parser;
+namespace PenguinTools.Core.Chart.Parser;
 
 public partial class MgxcParser
 {
@@ -59,7 +60,7 @@ public partial class MgxcParser
                 3 => StarDifficulty.S3,
                 4 => StarDifficulty.S4,
                 5 => StarDifficulty.S5,
-                _ => StarDifficulty.NA
+                _ => StarDifficulty.Na
             };
         }
         else if (name == "weat")

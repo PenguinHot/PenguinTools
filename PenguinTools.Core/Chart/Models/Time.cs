@@ -1,4 +1,4 @@
-﻿namespace PenguinTools.Common.Chart.Models;
+﻿namespace PenguinTools.Core.Chart.Models;
 
 public readonly record struct Position(int Measure, int Offset);
 

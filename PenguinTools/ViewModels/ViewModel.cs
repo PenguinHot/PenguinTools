@@ -2,8 +2,8 @@
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.DependencyInjection;
 using PenguinTools.Common;
-using PenguinTools.Common.Asset;
-using PenguinTools.Common.Resources;
+using PenguinTools.Core;
+using PenguinTools.Core.Asset;
 using PenguinTools.Models;
 using PenguinTools.Services;
 using System.IO;
